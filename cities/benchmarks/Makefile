@@ -19,10 +19,10 @@ nopgo.times:
 	go test -timeout 2h -bench . -pgo off -count $(count) > nopgo.times
 
 pgo.times: nopgo.pprof
-	go test -timeout 2h -bench . -cpuprofile pgo.pprof -pgo nopgo.pprof  -count $(count) > pgo.times
+	go test -timeout 2h -bench . -pgo nopgo.pprof  -count $(count) > pgo.times
 
 pgo_v2.times: pgo.pprof
-	go test -timeout 2h -bench . -cpuprofile pgo_v2.pprof -pgo pgo.pprof  -count $(count) > pgo_v2.times
+	go test -timeout 2h -bench . -pgo pgo.pprof  -count $(count) > pgo_v2.times
 
 summary.md: nopgo.times pgo.times pgo_v2.times
 	benchstat nopgo.times pgo.times  pgo_v2.times > summary.md
