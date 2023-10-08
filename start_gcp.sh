@@ -1,0 +1,23 @@
+gcloud compute instances create-with-container go-gpo-talk \
+    --project=krzysztofdrys-priv \
+    --zone=europe-central2-a \
+    --machine-type=n2-standard-2 \
+    --network-interface=network-tier=PREMIUM,stack-type=IPV4_ONLY,subnet=default \
+    --maintenance-policy=MIGRATE \
+    --provisioning-model=STANDARD \
+    --service-account=174625109311-compute@developer.gserviceaccount.com \
+    --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append \
+    --enable-display-device \
+    --image=projects/cos-cloud/global/images/cos-stable-109-17800-0-47 \
+    --boot-disk-size=10GB \
+    --boot-disk-type=pd-balanced \
+    --boot-disk-device-name=go-gpo-talk \
+    --container-image=docker.io/krzysztofdrys/go-pgo-talk:latest \
+    --container-restart-policy=always \
+    --container-privileged \
+    --container-stdin \
+    --container-tty \
+    --no-shielded-secure-boot \
+    --shielded-vtpm \
+    --shielded-integrity-monitoring \
+    --labels=goog-ec-src=vm_add-gcloud,container-vm=cos-stable-109-17800-0-47
