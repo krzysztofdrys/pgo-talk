@@ -24,5 +24,5 @@ pgo.times: nopgo.pprof
 pgo_v2.times: pgo.pprof
 	go test -timeout 2h -bench . -pgo pgo.pprof  -count $(count) > pgo_v2.times
 
-summary.md: nopgo.times pgo.times pgo_v2.times
-	benchstat nopgo.times pgo.times  pgo_v2.times > summary.md
+summary.txt: nopgo.times pgo.times pgo_v2.times
+	benchstat nopgo.times pgo.times  pgo_v2.times > summary.txt

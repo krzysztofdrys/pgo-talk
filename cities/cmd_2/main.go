@@ -28,24 +28,11 @@ func main() {
 		panic(err)
 	}
 
-	for c1 := 'A'; c1 <= 'Z'; c1++ {
-		for c2 := 'a'; c2 <= 'z'; c2++ {
-			for c3 := 'a'; c3 <= 'z'; c3++ {
-				prefix := string(c1) + string(c2) + string(c3)
-				f := city.AndFilter{
-					P1: city.NamePrefixFilter{
-						Prefix: prefix,
-					},
-					P2: city.PopulationFilter{
-						Pop: 100000,
-					},
-				}
-				r := city.Filter(dataset.Features, f)
-				_, err := json.Marshal(r)
-				if err != nil {
-					panic(err)
-				}
-			}
+	for i := 0; i < 1000000; i++ {
+		cs := city.ClosestCities(51.12199803, 17.03799962, 1000, city.HaversineDistance{}, dataset.Features)
+		_, err := json.Marshal(cs)
+		if err != nil {
+			panic(err)
 		}
 	}
 

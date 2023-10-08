@@ -29,9 +29,3 @@ results.md: cities.pgo cities
 		--warmup 1 \
 		'./cities' \
 		'./cities.pgo'
-
-pgo.times:
-	hey -D README.md -m POST -z 20s  'http://localhost:8080/render' > pgo.times
-
-std.times:
-	hey -D README.md -m POST -z 20s  'http://localhost:8080/render' > std.times
