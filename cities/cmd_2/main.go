@@ -28,7 +28,7 @@ func main() {
 		panic(err)
 	}
 
-	for i := 0; i < 1000000; i++ {
+	for i := 0; i < 1000; i++ {
 		cs := city.ClosestCities(51.12199803, 17.03799962, 1000, city.HaversineDistance{}, dataset.Features)
 		_, err := json.Marshal(cs)
 		if err != nil {
