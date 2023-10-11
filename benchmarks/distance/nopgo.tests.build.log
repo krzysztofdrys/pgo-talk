@@ -1,33 +1,34 @@
+go: downloading github.com/jftuga/geodist v1.0.0
 # github.com/jftuga/geodist
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:25:26: inlining call to math.Sin
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:25:17: inlining call to math.Pow
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:31: inlining call to math.Cos
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:45: inlining call to math.Cos
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:52:39: inlining call to math.Sqrt
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:52:29: inlining call to math.Asin
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:51:36: inlining call to math.Tan
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:51:17: inlining call to math.Atan
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:52:36: inlining call to math.Tan
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:52:17: inlining call to math.Atan
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:54:19: inlining call to math.Sin
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:55:19: inlining call to math.Cos
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:56:19: inlining call to math.Sin
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:57:19: inlining call to math.Cos
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:67:14: inlining call to math.Abs
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:72:23: inlining call to math.Sin
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:73:23: inlining call to math.Cos
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:75:23: inlining call to math.Sqrt
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:81:21: inlining call to math.Atan2
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:85:16: inlining call to math.IsNaN
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:94:28: inlining call to errors.New
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:67:14: inlining call to math.Float64bits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:67:14: inlining call to math.Float64frombits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:94:28: &errors.errorString{...} escapes to heap
-# github.com/krzysztofdrys/pgo-talk/benchmark [github.com/krzysztofdrys/pgo-talk/benchmark.test]
-./distance_test.go:14:6: can inline distance
-./distance_test.go:10:11: inlining call to distance
-./distance_test.go:8:24: b does not escape
-# github.com/krzysztofdrys/pgo-talk/benchmark.test
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:25:26: inlining call to math.Sin
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:25:17: inlining call to math.Pow
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:31: inlining call to math.Cos
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:45: inlining call to math.Cos
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:52:39: inlining call to math.Sqrt
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:52:29: inlining call to math.Asin
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:51:36: inlining call to math.Tan
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:51:17: inlining call to math.Atan
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:52:36: inlining call to math.Tan
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:52:17: inlining call to math.Atan
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:54:19: inlining call to math.Sin
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:55:19: inlining call to math.Cos
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:56:19: inlining call to math.Sin
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:57:19: inlining call to math.Cos
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:67:14: inlining call to math.Abs
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:72:23: inlining call to math.Sin
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:73:23: inlining call to math.Cos
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:75:23: inlining call to math.Sqrt
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:81:21: inlining call to math.Atan2
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:85:16: inlining call to math.IsNaN
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:94:28: inlining call to errors.New
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:67:14: inlining call to math.Float64bits
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:67:14: inlining call to math.Float64frombits
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:94:28: &errors.errorString{...} escapes to heap
+# github.com/krzysztofdrys/pgo-talk/benchmarks/distance [github.com/krzysztofdrys/pgo-talk/benchmarks/distance.test]
+./distance_test.go:15:6: can inline distance
+./distance_test.go:11:11: inlining call to distance
+./distance_test.go:9:24: b does not escape
+# github.com/krzysztofdrys/pgo-talk/benchmarks/distance.test
 _testmain.go:37:6: can inline init.0
 _testmain.go:45:24: inlining call to testing.MainStart
 _testmain.go:45:42: testdeps.TestDeps{} escapes to heap

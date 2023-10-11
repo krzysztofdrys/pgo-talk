@@ -1,112 +1,66 @@
-# github.com/jftuga/geodist [github.com/krzysztofdrys/pgo-talk/benchmark.test]
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:24:6: can inline hsin
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:25:26: inlining call to math.Sin
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:25:17: inlining call to math.Pow
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:36:6: can inline HaversineDistance
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to hsin
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:31: inlining call to math.Cos
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:45: inlining call to math.Cos
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to hsin
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:52:39: inlining call to math.Sqrt
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:52:29: inlining call to math.Asin
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Pow
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Pow
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.pow
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.pow
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.IsNaN
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.IsNaN
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.NaN
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Signbit
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Inf
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Inf
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Signbit
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.IsInf
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Abs
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.IsInf
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Inf
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.IsInf
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.IsInf
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Inf
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Sqrt
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Sqrt
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Abs
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Modf
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.NaN
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Abs
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Inf
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Log
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Exp
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.IsNaN
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.IsNaN
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.NaN
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Signbit
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Inf
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Inf
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Signbit
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.IsInf
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Abs
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.IsInf
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Inf
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.IsInf
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.IsInf
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Inf
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Sqrt
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Sqrt
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Abs
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Modf
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.NaN
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Abs
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Inf
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Log
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Exp
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Float64frombits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Float64bits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Float64frombits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Float64frombits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Float64bits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Float64bits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Float64frombits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Float64frombits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Float64frombits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Float64bits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Float64frombits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Float64frombits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Float64bits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Float64frombits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:11: inlining call to math.Float64frombits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Float64frombits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Float64bits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Float64frombits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Float64frombits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Float64bits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Float64bits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Float64frombits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Float64frombits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Float64frombits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Float64bits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Float64frombits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Float64frombits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Float64bits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Float64frombits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:55: inlining call to math.Float64frombits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:51:36: inlining call to math.Tan
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:51:17: inlining call to math.Atan
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:52:36: inlining call to math.Tan
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:52:17: inlining call to math.Atan
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:67:14: inlining call to math.Abs
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:75:23: inlining call to math.Sqrt
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:81:21: inlining call to math.Atan2
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:85:16: inlining call to math.IsNaN
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:94:28: inlining call to errors.New
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:67:14: inlining call to math.Float64bits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:67:14: inlining call to math.Float64frombits
-../../../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:94:28: &errors.errorString{...} escapes to heap
-# github.com/krzysztofdrys/pgo-talk/benchmark [github.com/krzysztofdrys/pgo-talk/benchmark.test]
-./distance_test.go:17:27: inlining call to geodist.HaversineDistance
-./distance_test.go:17:27: inlining call to math.Sqrt
-./distance_test.go:8:6: can inline BenchmarkDistance
-./distance_test.go:8:24: b does not escape
-# github.com/krzysztofdrys/pgo-talk/benchmark.test
+# github.com/jftuga/geodist [github.com/krzysztofdrys/pgo-talk/benchmarks/json.test]
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:25:26: inlining call to math.Sin
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:25:17: inlining call to math.Pow
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:31: inlining call to math.Cos
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:50:45: inlining call to math.Cos
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:52:39: inlining call to math.Sqrt
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:52:29: inlining call to math.Asin
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:51:36: inlining call to math.Tan
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:51:17: inlining call to math.Atan
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:52:36: inlining call to math.Tan
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:52:17: inlining call to math.Atan
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:54:19: inlining call to math.Sin
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:55:19: inlining call to math.Cos
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:56:19: inlining call to math.Sin
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:57:19: inlining call to math.Cos
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:67:14: inlining call to math.Abs
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:72:23: inlining call to math.Sin
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:73:23: inlining call to math.Cos
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:75:23: inlining call to math.Sqrt
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:81:21: inlining call to math.Atan2
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:85:16: inlining call to math.IsNaN
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:94:28: inlining call to errors.New
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:67:14: inlining call to math.Float64bits
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:67:14: inlining call to math.Float64frombits
+../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/vincenty.go:94:28: &errors.errorString{...} escapes to heap
+# github.com/krzysztofdrys/pgo-talk/city [github.com/krzysztofdrys/pgo-talk/benchmarks/json.test]
+../../city/closest.go:15:6: can inline closestCities.push
+../../city/closest.go:50:32: inlining call to math.Inf
+../../city/closest.go:54:14: inlining call to closestCities.push
+../../city/closest.go:50:32: inlining call to math.Float64frombits
+../../city/filter.go:12:6: can inline Filter
+../../city/filter.go:26:6: can inline NamePrefixFilter.Check
+../../city/filter.go:27:26: inlining call to strings.HasPrefix
+../../city/filter.go:46:6: can inline PopulationFilter.Check
+<autogenerated>:1: inlining call to closestCities.push
+<autogenerated>:1: inlining call to NamePrefixFilter.Check
+<autogenerated>:1: inlining call to strings.HasPrefix
+<autogenerated>:1: inlining call to PopulationFilter.Check
+../../city/closest.go:22:19: closestCities.push ignoring self-assignment in cs[i], cs[i - 1] = cs[i - 1], cs[i]
+../../city/closest.go:22:19: closestCities.push ignoring self-assignment in cs[i], cs[i - 1] = cs[i - 1], cs[i]
+../../city/closest.go:15:7: cs does not escape
+../../city/closest.go:15:30: leaking param: cd
+../../city/closest.go:34:38: c does not escape
+../../city/closest.go:54:14: ClosestCities ignoring self-assignment in cs[i], cs[i - 1] = cs[i - 1], cs[i]
+../../city/closest.go:54:14: ClosestCities ignoring self-assignment in cs[i], cs[i - 1] = cs[i - 1], cs[i]
+../../city/closest.go:47:45: leaking param: d
+../../city/closest.go:47:57: leaking param content: cs
+../../city/closest.go:48:16: make(closestCities, n) escapes to heap
+../../city/filter.go:12:13: leaking param content: cs
+../../city/filter.go:12:24: leaking param: p
+../../city/filter.go:26:7: f does not escape
+../../city/filter.go:26:33: c does not escape
+../../city/filter.go:34:7: leaking param: af
+../../city/filter.go:34:27: leaking param: c
+../../city/filter.go:46:33: c does not escape
+../../city/filter.go:55:32: c does not escape
+../../city/read.go:13:6: moved to heap: dataset
+<autogenerated>:1: (*closestCities).push ignoring self-assignment in cs[i], cs[i - 1] = cs[i - 1], cs[i]
+<autogenerated>:1: (*closestCities).push ignoring self-assignment in cs[i], cs[i - 1] = cs[i - 1], cs[i]
+# github.com/krzysztofdrys/pgo-talk/benchmarks/json [github.com/krzysztofdrys/pgo-talk/benchmarks/json.test]
+./distance_test.go:10:20: b does not escape
+./distance_test.go:19:26: cs escapes to heap
+# github.com/krzysztofdrys/pgo-talk/benchmarks/json.test
 _testmain.go:37:6: can inline init.0
 _testmain.go:45:24: inlining call to testing.MainStart
 _testmain.go:45:42: testdeps.TestDeps{} escapes to heap
