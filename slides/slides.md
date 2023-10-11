@@ -6,7 +6,7 @@ html: true
 # Profile-guided optimization
 Krzysztof Dryś
 2023-10-12
-<!-- theme: gaia -->
+<!-- theme: leibniz -->
 <style>
 img[alt~="center"] {
   display: block;
@@ -32,9 +32,11 @@ img[alt~="center"] {
 ---
 # Haversine formula
 
-The haversine formula determines the great-circle distance between two points on a sphere given their longitudes and latitudes. Important in navigation, it is a special case of a more general formula in spherical trigonometry, the law of haversines, that relates the sides and angles of spherical triangles. [from wikipedia](https://en.wikipedia.org/wiki/Haversine_formula)
+The haversine formula determines the great-circle distance between two points on a sphere given their longitudes and latitudes. Important in navigation, it is a special case of a more general formula in spherical trigonometry, the law of haversines, that relates the sides and angles of spherical triangles. 
 
-Implemented by [github.com/jftuga/geodist](https://github.com/jftuga/geodist).
+(from [wikipedia](https://en.wikipedia.org/wiki/Haversine_formula))
+
+Implemented by [github.com/jftuga/geodist](https://github.com/jftuga/geodist):
 
 ```go
 var elPaso = geodist.Coord{Lat: 31.7619, Lon: 106.4850}
@@ -97,4 +99,26 @@ Json-2         4.302m ± 0%   3.748m ± 0%  -12.90% (n=100)   3.816m ± 0%  -11.
 Yes, mostly.
 
 ---
-# What optimisations are 
+# Source stability
+
+Specifically, Go uses line offsets within functions (e.g., call on 5th line of function foo).
+
+Many common changes will not break matching, including:
+
+- Changes in a file outside of a hot function (adding/changing code above or below the function).
+- Moving a function to another file in the same package (the compiler ignores source filenames altogether). 
+
+Some changes that may break matching:
+
+- Changes within a hot function (may affect line offsets).
+- Renaming the function (and/or type for methods) (changes symbol name).
+- Moving the function to another package (changes symbol name).
+
+(from [go documentation](https://go.dev/doc/pgo#source-stability))
+
+---
+# Optimisations
+
+Right now PGO supports two optimisations:
+- function inlining,
+- devirtualisation.

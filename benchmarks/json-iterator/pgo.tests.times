@@ -1,0 +1,16 @@
+goos: darwin
+goarch: amd64
+pkg: github.com/krzysztofdrys/pgo-talk/benchmarks/json-iterator
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkJson-16    	     300	   4085792 ns/op
+BenchmarkJson-16    	     288	   3926760 ns/op
+BenchmarkJson-16    	     304	   3939235 ns/op
+BenchmarkJson-16    	     297	   3984292 ns/op
+BenchmarkJson-16    	     304	   3998016 ns/op
+BenchmarkJson-16    	     296	   3977575 ns/op
+BenchmarkJson-16    	     302	   3960509 ns/op
+BenchmarkJson-16    	     307	   4120160 ns/op
+BenchmarkJson-16    	     303	   3931892 ns/op
+BenchmarkJson-16    	     306	   3964074 ns/op
+PASS
+ok  	github.com/krzysztofdrys/pgo-talk/benchmarks/json-iterator	16.823s

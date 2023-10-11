@@ -1,3 +1,3 @@
 *.pgp
 .idea
-.test
+*.test
