@@ -7,13 +7,11 @@ import (
 )
 
 func BenchmarkDistance(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		b.RunParallel(func(pb *testing.PB) {
-			for pb.Next() {
-				distance()
-			}
-		})
-	}
+	b.RunParallel(func(pb *testing.PB) {
+		for pb.Next() {
+			distance()
+		}
+	})
 }
 
 func distance() {
