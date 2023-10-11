@@ -1,4 +1,4 @@
-module github.com/krzysztofdrys/pgo-talk/cities
+module github.com/krzysztofdrys/pgo-talk
 
 go 1.21.1
 
