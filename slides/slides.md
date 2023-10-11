@@ -23,8 +23,9 @@ img[alt~="center"] {
 2. Run your application in production,
 3. `curl -o cpu.pprof "http://localhost:8080/debug/pprof/profile?seconds=30"` to profile your application,
 4. `go build -pgo cpu.pprof .`
-5. Deploy new profile to prod,
+5. Deploy new binary to prod,
 6. Observe performance gains.
+7. GOTO (3)
 
 ---
 # Demo
@@ -44,18 +45,26 @@ var stLouis = geodist.Coord{Lat: 38.6270, Lon: 90.1994}
 miles, km = geodist.HaversineDistance(elPaso, stLouis)
 fmt.Printf("[Haversine] El Paso to St. Louis:  %.3f m, %.3f km\n", miles, km)
 ```
+---
+# Demo
+
+This time for real.
 
 ---
+# Results
+
+All tests were run on `n2-highcpu-4` machine with Intel Cascade Lake CPU.
+
 # Results
 
 ```
 goos: linux
 goarch: amd64
-pkg: github.com/krzysztofdrys/pgo-talk/benchmarks/distance_paralel
+pkg: github.com/krzysztofdrys/pgo-talk/benchmarks/distance
 cpu: Intel(R) Xeon(R) CPU @ 2.80GHz
            │ nopgo.tests.times │       pgo.tests.times       │     pgo_v2.tests.times      │
            │      sec/op       │   sec/op     vs base        │   sec/op     vs base        │
-Distance-2         92.10n ± 0%   89.97n ± 0%  -2.31% (n=100)   89.94n ± 0%  -2.35% (n=100)
+Distance-4         124.9n ± 0%   118.4n ± 0%  -5.20% (n=100)   119.1n ± 0%  -4.64% (n=100)
 ```
 
 ---
@@ -89,9 +98,84 @@ pkg: github.com/krzysztofdrys/pgo-talk/benchmarks/json
 cpu: Intel(R) Xeon(R) CPU @ 2.80GHz
        │ nopgo.tests.times │       pgo.tests.times        │      pgo_v2.tests.times      │
        │      sec/op       │   sec/op     vs base         │   sec/op     vs base         │
-Json-2         4.302m ± 0%   3.748m ± 0%  -12.90% (n=100)   3.816m ± 0%  -11.32% (n=100)
+Json-4         5.454m ± 0%   4.620m ± 0%  -15.28% (n=100)   4.686m ± 1%  -14.07% (n=100)
 
 ```
+
+---
+# JSON marshalling (reprise)
+
+
+```go
+import (
+	jsoniter "github.com/json-iterator/go"
+)
+
+var json = jsoniter.ConfigCompatibleWithStandardLibrary
+
+func BenchmarkJson(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		_, err := json.Marshal(cs)
+		if err != nil {
+			panic(err)
+		}
+	}
+}
+```
+
+---
+# Results
+
+```
+goos: darwin
+goarch: amd64
+pkg: github.com/krzysztofdrys/pgo-talk/benchmarks/json-iterator
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+        │ nopgo.tests.times │          pgo.tests.times           │         pgo_v2.tests.times         │
+        │      sec/op       │   sec/op     vs base               │   sec/op     vs base               │
+Json-16         4.262m ± 1%   3.971m ± 3%  -6.83% (p=0.000 n=10)   3.990m ± 1%  -6.37% (p=0.000 n=10)
+```
+
+---
+# Rendering Markdown
+
+```go
+func BenchmarkMarkdownRender(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		md := markdown.New(
+			markdown.XHTMLOutput(true),
+			markdown.Typographer(true),
+			markdown.Linkify(true),
+			markdown.Tables(true),
+		)
+
+		var buf bytes.Buffer
+		if err := md.Render(&buf, src); err != nil {
+			panic(err)
+		}
+	}
+}
+```
+
+---
+# Results
+
+```
+goos: linux
+goarch: amd64
+pkg: github.com/krzysztofdrys/pgo-talk/benchmarks/markdown
+cpu: Intel(R) Xeon(R) CPU @ 2.80GHz
+                 │ nopgo.tests.times │           pgo.tests.times           │         pgo_v2.tests.times          │
+                 │      sec/op       │   sec/op     vs base                │   sec/op     vs base                │
+MarkdownRender-4         78.01µ ± 0%   76.88µ ± 1%  -1.45% (p=0.000 n=100)   77.09µ ± 0%  -1.18% (p=0.000 n=100)
+```
+
+Note: [article on go.dev blog](https://go.dev/blog/pgo) reports ~3.8% improvement for web server running this converter 🤷‍. ️ 
+
+---
+# Q&A
+
+Part where I ask questions and I answer them
 
 ---
 # Will profiles from version `1.0.1` work for `1.0.2`? 
@@ -117,8 +201,19 @@ Some changes that may break matching:
 (from [go documentation](https://go.dev/doc/pgo#source-stability))
 
 ---
-# Optimisations
+# What optimisations are enabled by PGO?
 
 Right now PGO supports two optimisations:
 - function inlining,
 - devirtualisation.
+
+More will (most likely come) resulting more in better results.
+
+---
+# Where do I keep prod pprof data?
+
+Preferably in git, right where you do `go build`. If you name file `default.pgo`, then go will pick it up automatically.
+
+- This gives you repeatable builds,
+- You can update `default.pgo` every day/week/month with fresh data,
+- Whenever you update `default.pgo`, you need to rebuild every package.

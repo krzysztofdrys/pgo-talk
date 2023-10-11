@@ -1,10 +1,10 @@
-gcflags := -gcflags='encoding/json=-m=1' -gcflags='github.com/***=-m=1'
+gcflags := -gcflags='github.com/json-iterator/go=-m=1'
 count   := 100
 
 all: nopgo.tests.pprof pgo.tests.pprof pgo_v2.tests.pprof summary.tests.txt
 
 clean:
-	rm -rf *.log *.times *.pprof summary.txt
+	rm -rf *.log *.times *.pprof summary.tests.txt
 
 nopgo.tests.pprof:
 	go test -timeout 2h -bench . -cpuprofile nopgo.tests.pprof -pgo off -count $(count) $(gcflags) 2> nopgo.tests.build.log

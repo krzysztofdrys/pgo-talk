@@ -1,7 +1,7 @@
-goos: linux
+goos: darwin
 goarch: amd64
 pkg: github.com/krzysztofdrys/pgo-talk/benchmarks/json-iterator
-cpu: Intel(R) Xeon(R) CPU @ 2.80GHz
-       │ nopgo.tests.times │       pgo.tests.times       │     pgo_v2.tests.times      │
-       │      sec/op       │   sec/op     vs base        │   sec/op     vs base        │
-Json-4         5.204m ± 0%   4.693m ± 0%  -9.82% (n=100)   4.740m ± 0%  -8.90% (n=100)
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+        │ nopgo.tests.times │          pgo.tests.times           │         pgo_v2.tests.times         │
+        │      sec/op       │   sec/op     vs base               │   sec/op     vs base               │
+Json-16         4.629m ± 5%   4.398m ± 2%  -4.99% (p=0.001 n=10)   4.324m ± 4%  -6.58% (p=0.000 n=10)
