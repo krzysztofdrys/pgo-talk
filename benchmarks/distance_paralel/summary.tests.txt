@@ -4,4 +4,4 @@ pkg: github.com/krzysztofdrys/pgo-talk/benchmarks/distance_paralel
 cpu: Intel(R) Xeon(R) CPU @ 2.80GHz
            │ nopgo.tests.times │       pgo.tests.times       │     pgo_v2.tests.times      │
            │      sec/op       │   sec/op     vs base        │   sec/op     vs base        │
-Distance-2         92.10n ± 0%   89.97n ± 0%  -2.31% (n=100)   89.94n ± 0%  -2.35% (n=100)
+Distance-4         52.61n ± 0%   51.18n ± 0%  -2.71% (n=100)   51.20n ± 0%  -2.67% (n=100)

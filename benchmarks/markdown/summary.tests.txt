@@ -2,6 +2,6 @@ goos: linux
 goarch: amd64
 pkg: github.com/krzysztofdrys/pgo-talk/benchmarks/markdown
 cpu: Intel(R) Xeon(R) CPU @ 2.80GHz
-                 │ nopgo.tests.times │       pgo.tests.times       │     pgo_v2.tests.times      │
-                 │      sec/op       │   sec/op     vs base        │   sec/op     vs base        │
-MarkdownRender-2         61.53µ ± 0%   59.36µ ± 0%  -3.54% (n=100)   59.49µ ± 0%  -3.32% (n=100)
+                 │ nopgo.tests.times │           pgo.tests.times           │         pgo_v2.tests.times          │
+                 │      sec/op       │   sec/op     vs base                │   sec/op     vs base                │
+MarkdownRender-4         78.01µ ± 0%   76.88µ ± 1%  -1.45% (p=0.000 n=100)   77.09µ ± 0%  -1.18% (p=0.000 n=100)
