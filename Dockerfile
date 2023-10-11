@@ -1,4 +1,4 @@
-FROM krzysztofdrys/developmentmachine:0.0.7
+FROM krzysztofdrys/developmentmachine
 
 RUN /usr/local/go/bin/go install golang.org/x/perf/cmd/benchstat@latest
 RUN ln -s ${HOME}/go/bin/benchstat ${HOME}/bin

@@ -12,7 +12,7 @@ var data []byte
 func Read() (Dataset, error) {
 	var dataset Dataset
 	if err := json.Unmarshal(data, &dataset); err != nil {
-		return dataset, fmt.Errorf("failed to read dataset")
+		return dataset, fmt.Errorf("failed to read dataset: %w", err)
 	}
 	return dataset, nil
 }

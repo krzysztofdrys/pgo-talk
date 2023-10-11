@@ -9,6 +9,7 @@ import (
 
 func BenchmarkJson(b *testing.B) {
 	b.StopTimer()
+	// Reads 1.1M of json data
 	cs, err := city.Read()
 	if err != nil {
 		panic(err)

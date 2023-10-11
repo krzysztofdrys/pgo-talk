@@ -1,7 +1,7 @@
 gcflags := -gcflags='github.com/...=-m=1'
 count   := 100
 
-all: nopgo.tests.pprof pgo.tests.pprof summary.tests.txt
+all: nopgo.tests.pprof pgo.tests.pprof pgo_v2.tests.pprof summary.tests.txt
 
 clean:
 	rm -rf *.log *.times *.pprof summary.txt

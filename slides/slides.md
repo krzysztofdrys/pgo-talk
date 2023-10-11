@@ -44,8 +44,52 @@ fmt.Printf("[Haversine] El Paso to St. Louis:  %.3f m, %.3f km\n", miles, km)
 ```
 
 ---
+# Results
 
+```
+goos: linux
+goarch: amd64
+pkg: github.com/krzysztofdrys/pgo-talk/benchmarks/distance_paralel
+cpu: Intel(R) Xeon(R) CPU @ 2.80GHz
+           │ nopgo.tests.times │       pgo.tests.times       │     pgo_v2.tests.times      │
+           │      sec/op       │   sec/op     vs base        │   sec/op     vs base        │
+Distance-2         92.10n ± 0%   89.97n ± 0%  -2.31% (n=100)   89.94n ± 0%  -2.35% (n=100)
+```
 
+---
+# JSON marshalling
+
+```go
+func BenchmarkJson(b *testing.B) {
+    b.StopTimer()
+    // Reads 1.1M of json data
+    cs, err := city.Read()
+    if err != nil {
+        panic(err)
+    }
+    b.StartTimer()
+    
+    for i := 0; i < b.N; i++ {
+     _, err := json.Marshal(cs)
+	 if err != nil {
+          panic(err)
+      }
+    }
+}
+```
+---
+# Results
+
+```
+goos: linux
+goarch: amd64
+pkg: github.com/krzysztofdrys/pgo-talk/benchmarks/json
+cpu: Intel(R) Xeon(R) CPU @ 2.80GHz
+       │ nopgo.tests.times │       pgo.tests.times        │      pgo_v2.tests.times      │
+       │      sec/op       │   sec/op     vs base         │   sec/op     vs base         │
+Json-2         4.302m ± 0%   3.748m ± 0%  -12.90% (n=100)   3.816m ± 0%  -11.32% (n=100)
+
+```
 
 ---
 # Will profiles from version `1.0.1` work for `1.0.2`? 
