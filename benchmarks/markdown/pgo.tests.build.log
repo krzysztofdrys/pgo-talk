@@ -1,32 +1,30 @@
 # github.com/krzysztofdrys/pgo-talk/benchmarks/markdown [github.com/krzysztofdrys/pgo-talk/benchmarks/markdown.test]
-./distance_test.go:14:6: can inline BenchmarkMarkdownRender
-./distance_test.go:17:24: inlining call to markdown.XHTMLOutput
-./distance_test.go:18:24: inlining call to markdown.Typographer
-./distance_test.go:19:20: inlining call to markdown.Linkify
-./distance_test.go:20:19: inlining call to markdown.Tables
-./distance_test.go:16:21: inlining call to markdown.New
-./distance_test.go:24:22: inlining call to markdown.(*Markdown).Render
-./distance_test.go:24:22: inlining call to markdown.NewRenderer
-./distance_test.go:24:22: inlining call to markdown.newMonadicWriter
-./distance_test.go:24:22: inlining call to bufio.NewWriter
-./distance_test.go:24:22: inlining call to bufio.NewWriterSize
-./distance_test.go:14:30: b does not escape
+./markdown_test.go:14:6: can inline BenchmarkMarkdownRender
+./markdown_test.go:17:24: inlining call to markdown.XHTMLOutput
+./markdown_test.go:18:24: inlining call to markdown.Typographer
+./markdown_test.go:19:20: inlining call to markdown.Linkify
+./markdown_test.go:20:19: inlining call to markdown.Tables
+./markdown_test.go:24:22: inlining call to markdown.(*Markdown).Render
+./markdown_test.go:24:22: inlining call to markdown.NewRenderer
+./markdown_test.go:24:22: inlining call to markdown.newMonadicWriter
+./markdown_test.go:24:22: inlining call to bufio.NewWriter
+./markdown_test.go:24:22: inlining call to bufio.NewWriterSize
+./markdown_test.go:14:30: b does not escape
 ../../../go/pkg/mod/gitlab.com/golang-commonmark/markdown@v0.0.0-20211110145824-bf3e522c626a/options.go:50:14: m does not escape
 ../../../go/pkg/mod/gitlab.com/golang-commonmark/markdown@v0.0.0-20211110145824-bf3e522c626a/options.go:22:14: m does not escape
 ../../../go/pkg/mod/gitlab.com/golang-commonmark/markdown@v0.0.0-20211110145824-bf3e522c626a/options.go:16:14: m does not escape
 ../../../go/pkg/mod/gitlab.com/golang-commonmark/markdown@v0.0.0-20211110145824-bf3e522c626a/options.go:74:14: m does not escape
-./distance_test.go:23:7: moved to heap: buf
-./distance_test.go:16:21: ... argument does not escape
-./distance_test.go:17:24: func literal does not escape
-./distance_test.go:18:24: func literal does not escape
-./distance_test.go:19:20: func literal does not escape
-./distance_test.go:20:19: func literal does not escape
-./distance_test.go:16:21: &markdown.Markdown{...} escapes to heap
-./distance_test.go:24:22: &markdown.Renderer{...} does not escape
-./distance_test.go:24:22: &markdown.monadicWriter{...} escapes to heap
-./distance_test.go:24:22: &markdown.monadicWriter{...} escapes to heap
-./distance_test.go:24:22: &bufio.Writer{...} escapes to heap
-./distance_test.go:24:22: make([]byte, bufio.size) escapes to heap
+./markdown_test.go:23:7: moved to heap: buf
+./markdown_test.go:16:21: ... argument does not escape
+./markdown_test.go:17:24: func literal does not escape
+./markdown_test.go:18:24: func literal does not escape
+./markdown_test.go:19:20: func literal does not escape
+./markdown_test.go:20:19: func literal does not escape
+./markdown_test.go:24:22: &markdown.Renderer{...} does not escape
+./markdown_test.go:24:22: &markdown.monadicWriter{...} escapes to heap
+./markdown_test.go:24:22: &markdown.monadicWriter{...} escapes to heap
+./markdown_test.go:24:22: &bufio.Writer{...} escapes to heap
+./markdown_test.go:24:22: make([]byte, bufio.size) escapes to heap
 # github.com/krzysztofdrys/pgo-talk/benchmarks/markdown.test
 _testmain.go:37:6: can inline init.0
 _testmain.go:45:24: inlining call to testing.MainStart

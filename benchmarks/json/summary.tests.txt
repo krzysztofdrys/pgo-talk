@@ -4,4 +4,4 @@ pkg: github.com/krzysztofdrys/pgo-talk/benchmarks/json
 cpu: Intel(R) Xeon(R) CPU @ 2.80GHz
        │ nopgo.tests.times │       pgo.tests.times        │      pgo_v2.tests.times      │
        │      sec/op       │   sec/op     vs base         │   sec/op     vs base         │
-Json-4         5.454m ± 0%   4.620m ± 0%  -15.28% (n=100)   4.686m ± 1%  -14.07% (n=100)
+Json-2         5.263m ± 0%   4.574m ± 1%  -13.11% (n=100)   4.714m ± 0%  -10.44% (n=100)

@@ -1,3 +1,4 @@
+go: downloading github.com/jftuga/geodist v1.0.0
 # github.com/jftuga/geodist
 ../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:25:26: inlining call to math.Sin
 ../../../go/pkg/mod/github.com/jftuga/geodist@v1.0.0/haversine.go:25:17: inlining call to math.Pow

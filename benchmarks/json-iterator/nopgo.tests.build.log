@@ -1,3 +1,6 @@
+go: downloading github.com/json-iterator/go v1.1.12
+go: downloading github.com/modern-go/reflect2 v1.0.2
+go: downloading github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421
 # encoding/json
 /usr/local/go/src/encoding/json/scanner.go:199:6: can inline isSpace
 /usr/local/go/src/encoding/json/scanner.go:586:6: can inline stateError

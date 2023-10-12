@@ -1,25 +1,25 @@
 go: downloading gitlab.com/golang-commonmark/markdown v0.0.0-20211110145824-bf3e522c626a
-go: downloading gitlab.com/golang-commonmark/mdurl v0.0.0-20191124015652-932350d1cb84
 go: downloading gitlab.com/golang-commonmark/html v0.0.0-20191124015941-a22733972181
 go: downloading gitlab.com/golang-commonmark/linkify v0.0.0-20191026162114-a0c2df6c8f82
+go: downloading gitlab.com/golang-commonmark/mdurl v0.0.0-20191124015652-932350d1cb84
 go: downloading gitlab.com/golang-commonmark/puny v0.0.0-20191124015043-9f83538fa04f
 go: downloading golang.org/x/text v0.3.2
 # github.com/krzysztofdrys/pgo-talk/benchmarks/markdown [github.com/krzysztofdrys/pgo-talk/benchmarks/markdown.test]
-./distance_test.go:17:24: inlining call to markdown.XHTMLOutput
-./distance_test.go:18:24: inlining call to markdown.Typographer
-./distance_test.go:19:20: inlining call to markdown.Linkify
-./distance_test.go:20:19: inlining call to markdown.Tables
-./distance_test.go:14:30: b does not escape
+./markdown_test.go:17:24: inlining call to markdown.XHTMLOutput
+./markdown_test.go:18:24: inlining call to markdown.Typographer
+./markdown_test.go:19:20: inlining call to markdown.Linkify
+./markdown_test.go:20:19: inlining call to markdown.Tables
+./markdown_test.go:14:30: b does not escape
 ../../../go/pkg/mod/gitlab.com/golang-commonmark/markdown@v0.0.0-20211110145824-bf3e522c626a/options.go:50:14: m does not escape
 ../../../go/pkg/mod/gitlab.com/golang-commonmark/markdown@v0.0.0-20211110145824-bf3e522c626a/options.go:22:14: m does not escape
 ../../../go/pkg/mod/gitlab.com/golang-commonmark/markdown@v0.0.0-20211110145824-bf3e522c626a/options.go:16:14: m does not escape
 ../../../go/pkg/mod/gitlab.com/golang-commonmark/markdown@v0.0.0-20211110145824-bf3e522c626a/options.go:74:14: m does not escape
-./distance_test.go:23:7: moved to heap: buf
-./distance_test.go:16:21: ... argument does not escape
-./distance_test.go:17:24: func literal does not escape
-./distance_test.go:18:24: func literal does not escape
-./distance_test.go:19:20: func literal does not escape
-./distance_test.go:20:19: func literal does not escape
+./markdown_test.go:23:7: moved to heap: buf
+./markdown_test.go:16:21: ... argument does not escape
+./markdown_test.go:17:24: func literal does not escape
+./markdown_test.go:18:24: func literal does not escape
+./markdown_test.go:19:20: func literal does not escape
+./markdown_test.go:20:19: func literal does not escape
 # github.com/krzysztofdrys/pgo-talk/benchmarks/markdown.test
 _testmain.go:37:6: can inline init.0
 _testmain.go:45:24: inlining call to testing.MainStart

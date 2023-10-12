@@ -1,4 +1,4 @@
-gcflags := -gcflags='github.com/json-iterator/go=-m=1'
+gcflags := -gcflags='encoding/json=-m=1'
 count   := 100
 
 all: nopgo.tests.pprof pgo.tests.pprof pgo_v2.tests.pprof summary.tests.txt

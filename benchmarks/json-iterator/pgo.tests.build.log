@@ -13,16 +13,13 @@
 /usr/local/go/src/encoding/json/scanner.go:266:6: can inline stateBeginString
 /usr/local/go/src/encoding/json/scanner.go:337:6: can inline stateInString
 /usr/local/go/src/encoding/json/scanner.go:188:6: can inline (*scanner).popParseState
-/usr/local/go/src/encoding/json/scanner.go:429:6: can inline state0
 /usr/local/go/src/encoding/json/scanner.go:453:6: can inline stateDot0
 /usr/local/go/src/encoding/json/scanner.go:466:6: can inline stateE
 /usr/local/go/src/encoding/json/scanner.go:420:6: can inline state1
 /usr/local/go/src/encoding/json/scanner.go:216:12: inlining call to isSpace
 /usr/local/go/src/encoding/json/scanner.go:222:26: inlining call to (*scanner).pushParseState
-/usr/local/go/src/encoding/json/scanner.go:225:26: inlining call to (*scanner).pushParseState
 /usr/local/go/src/encoding/json/scanner.go:249:16: inlining call to (*scanner).error
 /usr/local/go/src/encoding/json/scanner.go:222:26: inlining call to (*scanner).error
-/usr/local/go/src/encoding/json/scanner.go:225:26: inlining call to (*scanner).error
 /usr/local/go/src/encoding/json/scanner.go:254:12: inlining call to isSpace
 /usr/local/go/src/encoding/json/scanner.go:287:12: inlining call to isSpace
 /usr/local/go/src/encoding/json/scanner.go:299:17: inlining call to (*scanner).error
@@ -42,8 +39,15 @@
 /usr/local/go/src/encoding/json/scanner.go:205:12: inlining call to isSpace
 /usr/local/go/src/encoding/json/scanner.go:415:16: inlining call to (*scanner).error
 /usr/local/go/src/encoding/json/scanner.go:448:16: inlining call to (*scanner).error
+/usr/local/go/src/encoding/json/scanner.go:461:22: inlining call to stateEndValue
+/usr/local/go/src/encoding/json/scanner.go:461:22: inlining call to isSpace
+/usr/local/go/src/encoding/json/scanner.go:461:22: inlining call to (*scanner).error
+/usr/local/go/src/encoding/json/scanner.go:461:22: inlining call to (*scanner).popParseState
+/usr/local/go/src/encoding/json/scanner.go:461:22: inlining call to (*scanner).error
+/usr/local/go/src/encoding/json/scanner.go:461:22: inlining call to (*scanner).popParseState
+/usr/local/go/src/encoding/json/scanner.go:461:22: inlining call to (*scanner).error
+/usr/local/go/src/encoding/json/scanner.go:461:22: inlining call to (*scanner).error
 /usr/local/go/src/encoding/json/scanner.go:481:16: inlining call to (*scanner).error
-/usr/local/go/src/encoding/json/scanner.go:425:15: inlining call to state0
 /usr/local/go/src/encoding/json/scanner.go:500:16: inlining call to (*scanner).error
 /usr/local/go/src/encoding/json/scanner.go:509:16: inlining call to (*scanner).error
 /usr/local/go/src/encoding/json/scanner.go:518:16: inlining call to (*scanner).error
@@ -151,6 +155,7 @@
 /usr/local/go/src/encoding/json/decode.go:347:27: inlining call to (*scanner).error
 /usr/local/go/src/encoding/json/decode.go:347:27: inlining call to (*scanner).error
 /usr/local/go/src/encoding/json/decode.go:1179:6: can inline unquoteBytes
+/usr/local/go/src/encoding/json/decode.go:1198:30: inlining call to utf8.DecodeRune
 /usr/local/go/src/encoding/json/decode.go:1259:25: inlining call to utf16.IsSurrogate
 /usr/local/go/src/encoding/json/decode.go:1261:32: inlining call to utf16.DecodeRune
 /usr/local/go/src/encoding/json/decode.go:830:77: inlining call to reflect.TypeOf
@@ -333,12 +338,6 @@
 /usr/local/go/src/encoding/json/fold.go:33:24: inlining call to utf8.AppendRune
 /usr/local/go/src/encoding/json/fold.go:14:6: can inline foldName
 /usr/local/go/src/encoding/json/encode.go:1270:6: can inline cachedTypeFields
-/usr/local/go/src/encoding/json/encode.go:1271:29: inlining call to sync.(*Map).Load
-/usr/local/go/src/encoding/json/encode.go:1271:29: inlining call to sync.(*Map).loadReadOnly
-/usr/local/go/src/encoding/json/encode.go:1271:29: inlining call to sync.(*Mutex).Lock
-/usr/local/go/src/encoding/json/encode.go:1271:29: inlining call to sync.(*Map).loadReadOnly
-/usr/local/go/src/encoding/json/encode.go:1271:29: inlining call to sync.(*Mutex).Unlock
-/usr/local/go/src/encoding/json/encode.go:1271:29: inlining call to sync.(*entry).load
 /usr/local/go/src/encoding/json/encode.go:1105:23: inlining call to reflect.StructField.IsExported
 /usr/local/go/src/encoding/json/encode.go:1111:29: inlining call to reflect.StructField.IsExported
 /usr/local/go/src/encoding/json/encode.go:1115:22: inlining call to reflect.StructTag.Get
@@ -421,6 +420,7 @@
 /usr/local/go/src/encoding/json/decode.go:999:100: inlining call to (*decodeState).readIndex
 /usr/local/go/src/encoding/json/decode.go:999:16: inlining call to (*decodeState).saveError
 /usr/local/go/src/encoding/json/decode.go:1005:42: inlining call to reflect.Value.Type
+/usr/local/go/src/encoding/json/decode.go:1005:32: inlining call to strconv.ParseFloat
 /usr/local/go/src/encoding/json/decode.go:1006:36: inlining call to reflect.Value.OverflowFloat
 /usr/local/go/src/encoding/json/decode.go:1007:71: inlining call to reflect.Value.Type
 /usr/local/go/src/encoding/json/decode.go:1007:100: inlining call to (*decodeState).readIndex
@@ -471,6 +471,7 @@
 /usr/local/go/src/encoding/json/decode.go:998:35: inlining call to reflect.flag.kind
 /usr/local/go/src/encoding/json/decode.go:999:71: inlining call to reflect.noescape
 /usr/local/go/src/encoding/json/decode.go:1005:42: inlining call to reflect.noescape
+/usr/local/go/src/encoding/json/decode.go:1005:32: inlining call to strconv.syntaxError
 /usr/local/go/src/encoding/json/decode.go:1006:36: inlining call to reflect.flag.kind
 /usr/local/go/src/encoding/json/decode.go:1006:36: inlining call to reflect.overflowFloat32
 /usr/local/go/src/encoding/json/decode.go:1006:36: inlining call to reflect.flag.kind
@@ -486,6 +487,7 @@
 /usr/local/go/src/encoding/json/decode.go:989:30: inlining call to strconv.cloneString
 /usr/local/go/src/encoding/json/decode.go:989:30: inlining call to strconv.cloneString
 /usr/local/go/src/encoding/json/decode.go:990:34: inlining call to reflect.noescape
+/usr/local/go/src/encoding/json/decode.go:1005:32: inlining call to strconv.cloneString
 /usr/local/go/src/encoding/json/decode.go:357:6: can inline (*decodeState).value
 /usr/local/go/src/encoding/json/decode.go:363:15: inlining call to reflect.Value.IsValid
 /usr/local/go/src/encoding/json/decode.go:373:15: inlining call to reflect.Value.IsValid
@@ -505,7 +507,6 @@
 /usr/local/go/src/encoding/json/decode.go:545:17: inlining call to reflect.Value.Cap
 /usr/local/go/src/encoding/json/decode.go:548:17: inlining call to reflect.Value.Len
 /usr/local/go/src/encoding/json/decode.go:553:15: inlining call to reflect.Value.Len
-/usr/local/go/src/encoding/json/decode.go:555:21: inlining call to (*decodeState).value
 /usr/local/go/src/encoding/json/decode.go:578:14: inlining call to reflect.Value.Len
 /usr/local/go/src/encoding/json/decode.go:579:12: inlining call to reflect.Value.Kind
 /usr/local/go/src/encoding/json/decode.go:580:19: inlining call to reflect.Value.Len
@@ -519,11 +520,6 @@
 /usr/local/go/src/encoding/json/decode.go:545:17: inlining call to reflect.flag.kind
 /usr/local/go/src/encoding/json/decode.go:548:17: inlining call to reflect.flag.kind
 /usr/local/go/src/encoding/json/decode.go:553:15: inlining call to reflect.flag.kind
-/usr/local/go/src/encoding/json/decode.go:555:21: inlining call to reflect.Value.IsValid
-/usr/local/go/src/encoding/json/decode.go:555:21: inlining call to reflect.Value.IsValid
-/usr/local/go/src/encoding/json/decode.go:555:21: inlining call to (*decodeState).readIndex
-/usr/local/go/src/encoding/json/decode.go:555:21: inlining call to reflect.Value.IsValid
-/usr/local/go/src/encoding/json/decode.go:555:21: inlining call to (*decodeState).readIndex
 /usr/local/go/src/encoding/json/decode.go:578:14: inlining call to reflect.flag.kind
 /usr/local/go/src/encoding/json/decode.go:579:12: inlining call to reflect.flag.kind
 /usr/local/go/src/encoding/json/decode.go:580:19: inlining call to reflect.flag.kind
@@ -642,7 +638,6 @@
 /usr/local/go/src/encoding/json/decode.go:151:61: inlining call to strconv.Quote
 /usr/local/go/src/encoding/json/decode.go:151:61: inlining call to strconv.quoteWith
 /usr/local/go/src/encoding/json/decode.go:192:6: can inline Number.String
-/usr/local/go/src/encoding/json/decode.go:195:6: can inline Number.Float64
 /usr/local/go/src/encoding/json/encode.go:270:10: inlining call to bytes.(*Buffer).Reset
 /usr/local/go/src/encoding/json/encode.go:295:32: inlining call to reflect.ValueOf
 /usr/local/go/src/encoding/json/encode.go:295:32: inlining call to reflect.unpackEface
@@ -757,7 +752,6 @@
 /usr/local/go/src/encoding/json/decode.go:835:32: inlining call to reflect.toRType
 /usr/local/go/src/encoding/json/encode.go:374:36: inlining call to reflect.toRType
 /usr/local/go/src/encoding/json/encode.go:375:36: inlining call to reflect.toRType
-<autogenerated>:1: inlining call to Number.Float64
 <autogenerated>:1: inlining call to Number.String
 <autogenerated>:1: inlining call to bytes.(*Buffer).Available
 <autogenerated>:1: inlining call to bytes.(*Buffer).AvailableBuffer
@@ -798,8 +792,13 @@
 /usr/local/go/src/encoding/json/scanner.go:328:18: s does not escape
 /usr/local/go/src/encoding/json/scanner.go:331:10: &SyntaxError{...} escapes to heap
 /usr/local/go/src/encoding/json/scanner.go:331:10: "invalid character " + quoteChar(c) + " " + context escapes to heap
+/usr/local/go/src/encoding/json/scanner.go:178:7: leaking param content: s
+/usr/local/go/src/encoding/json/scanner.go:183:16: &SyntaxError{...} escapes to heap
+/usr/local/go/src/encoding/json/scanner.go:183:16: "invalid character " + quoteChar(c) + " " + context escapes to heap
 /usr/local/go/src/encoding/json/scanner.go:307:19: stateEndValue ignoring self-assignment in s.parseState = s.parseState[0:n]
 /usr/local/go/src/encoding/json/scanner.go:317:19: stateEndValue ignoring self-assignment in s.parseState = s.parseState[0:n]
+/usr/local/go/src/encoding/json/scanner.go:461:22: stateDot0 ignoring self-assignment in s.parseState = s.parseState[0:n]
+/usr/local/go/src/encoding/json/scanner.go:461:22: stateDot0 ignoring self-assignment in s.parseState = s.parseState[0:n]
 /usr/local/go/src/encoding/json/scanner.go:215:22: leaking param content: s
 /usr/local/go/src/encoding/json/scanner.go:253:30: s does not escape
 /usr/local/go/src/encoding/json/scanner.go:279:20: s does not escape
@@ -831,8 +830,6 @@
 /usr/local/go/src/encoding/json/scanner.go:576:15: s does not escape
 /usr/local/go/src/encoding/json/scanner.go:222:26: &SyntaxError{...} escapes to heap
 /usr/local/go/src/encoding/json/scanner.go:222:26: "invalid character " + quoteChar(c) + " " + context escapes to heap
-/usr/local/go/src/encoding/json/scanner.go:225:26: &SyntaxError{...} escapes to heap
-/usr/local/go/src/encoding/json/scanner.go:225:26: "invalid character " + quoteChar(c) + " " + context escapes to heap
 /usr/local/go/src/encoding/json/scanner.go:249:16: &SyntaxError{...} escapes to heap
 /usr/local/go/src/encoding/json/scanner.go:249:16: "invalid character " + quoteChar(c) + " " + context escapes to heap
 /usr/local/go/src/encoding/json/scanner.go:299:17: &SyntaxError{...} escapes to heap
@@ -861,6 +858,14 @@
 /usr/local/go/src/encoding/json/scanner.go:415:16: "invalid character " + quoteChar(c) + " " + context escapes to heap
 /usr/local/go/src/encoding/json/scanner.go:448:16: &SyntaxError{...} escapes to heap
 /usr/local/go/src/encoding/json/scanner.go:448:16: "invalid character " + quoteChar(c) + " " + context escapes to heap
+/usr/local/go/src/encoding/json/scanner.go:461:22: &SyntaxError{...} escapes to heap
+/usr/local/go/src/encoding/json/scanner.go:461:22: "invalid character " + quoteChar(c) + " " + context escapes to heap
+/usr/local/go/src/encoding/json/scanner.go:461:22: &SyntaxError{...} escapes to heap
+/usr/local/go/src/encoding/json/scanner.go:461:22: "invalid character " + quoteChar(c) + " " + context escapes to heap
+/usr/local/go/src/encoding/json/scanner.go:461:22: &SyntaxError{...} escapes to heap
+/usr/local/go/src/encoding/json/scanner.go:461:22: "invalid character " + quoteChar(c) + " " + context escapes to heap
+/usr/local/go/src/encoding/json/scanner.go:461:22: &SyntaxError{...} escapes to heap
+/usr/local/go/src/encoding/json/scanner.go:461:22: "invalid character " + quoteChar(c) + " " + context escapes to heap
 /usr/local/go/src/encoding/json/scanner.go:481:16: &SyntaxError{...} escapes to heap
 /usr/local/go/src/encoding/json/scanner.go:481:16: "invalid character " + quoteChar(c) + " " + context escapes to heap
 /usr/local/go/src/encoding/json/scanner.go:500:16: &SyntaxError{...} escapes to heap
@@ -1171,6 +1176,9 @@
 /usr/local/go/src/encoding/json/decode.go:998:35: &reflect.ValueError{...} escapes to heap
 /usr/local/go/src/encoding/json/decode.go:999:17: &UnmarshalTypeError{...} escapes to heap
 /usr/local/go/src/encoding/json/decode.go:999:54: "number " + s escapes to heap
+/usr/local/go/src/encoding/json/decode.go:1005:32: &strconv.NumError{...} does not escape
+/usr/local/go/src/encoding/json/decode.go:1005:32: string(([]byte)(strconv.x)) does not escape
+/usr/local/go/src/encoding/json/decode.go:1005:32: ([]byte)(strconv.x) does not escape
 /usr/local/go/src/encoding/json/decode.go:1006:36: &reflect.ValueError{...} escapes to heap
 /usr/local/go/src/encoding/json/decode.go:1007:17: &UnmarshalTypeError{...} escapes to heap
 /usr/local/go/src/encoding/json/decode.go:1007:54: "number " + s escapes to heap
@@ -1184,7 +1192,6 @@
 /usr/local/go/src/encoding/json/decode.go:510:15: &UnmarshalTypeError{...} escapes to heap
 /usr/local/go/src/encoding/json/decode.go:522:26: ai escapes to heap
 /usr/local/go/src/encoding/json/decode.go:528:15: &UnmarshalTypeError{...} escapes to heap
-/usr/local/go/src/encoding/json/decode.go:555:21: phasePanicMsg escapes to heap
 /usr/local/go/src/encoding/json/decode.go:574:10: phasePanicMsg escapes to heap
 /usr/local/go/src/encoding/json/decode.go:607:15: &UnmarshalTypeError{...} escapes to heap
 /usr/local/go/src/encoding/json/decode.go:637:17: &UnmarshalTypeError{...} escapes to heap
@@ -1322,9 +1329,6 @@
 /usr/local/go/src/encoding/json/scanner.go:89:10: &scanner{} escapes to heap
 /usr/local/go/src/encoding/json/scanner.go:152:15: (*scanner).reset ignoring self-assignment in s.parseState = s.parseState[0:0]
 /usr/local/go/src/encoding/json/scanner.go:150:7: s does not escape
-/usr/local/go/src/encoding/json/scanner.go:178:7: leaking param content: s
-/usr/local/go/src/encoding/json/scanner.go:183:16: &SyntaxError{...} escapes to heap
-/usr/local/go/src/encoding/json/scanner.go:183:16: "invalid character " + quoteChar(c) + " " + context escapes to heap
 /usr/local/go/src/encoding/json/scanner.go:190:15: (*scanner).popParseState ignoring self-assignment in s.parseState = s.parseState[0:n]
 /usr/local/go/src/encoding/json/scanner.go:188:7: s does not escape
 /usr/local/go/src/encoding/json/scanner.go:591:7: s does not escape
@@ -1403,4 +1407,6 @@
 <autogenerated>:1: (*byIndex).Swap ignoring self-assignment in x[i], x[j] = x[j], x[i]
 <autogenerated>:1: ([]byte)("null") escapes to heap
 <autogenerated>:1: string(d) escapes to heap
+/usr/local/go/src/encoding/json/decode.go:1198:30: index bounds check elided
+/usr/local/go/src/encoding/json/decode.go:1198:30: index bounds check elided
 /usr/local/go/src/encoding/json/encode.go:916:25: index bounds check elided
