@@ -13,7 +13,12 @@ func BenchmarkDistance(b *testing.B) {
 }
 
 func distance() {
+	getDistance()
+}
+
+func getDistance() float64 {
 	var elPaso = geodist.Coord{Lat: 31.7619, Lon: 106.4850}
 	var stLouis = geodist.Coord{Lat: 38.6270, Lon: 90.1994}
-	geodist.HaversineDistance(elPaso, stLouis)
+	_, km := geodist.HaversineDistance(elPaso, stLouis)
+	return km
 }

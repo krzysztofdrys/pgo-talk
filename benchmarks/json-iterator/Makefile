@@ -1,5 +1,5 @@
-gcflags := -gcflags='encoding/json=-m=1' -gcflags='github.com/***=-m=1'
-count   := 100
+gcflags := -gcflags='github.com/...=-m=1'
+count   := 10
 
 all: nopgo.tests.pprof pgo.tests.pprof pgo_v2.tests.pprof summary.tests.txt
 

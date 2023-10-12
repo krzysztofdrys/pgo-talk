@@ -24,11 +24,11 @@ img[alt~="center"] {
 3. `curl -o cpu.pprof "http://localhost:8080/debug/pprof/profile?seconds=30"` to profile your application,
 4. `go build -pgo cpu.pprof .`
 5. Deploy new binary to prod,
-6. Observe performance gains.
+6. Observe performance gains,
 7. GOTO (3)
 
 ---
-# Demo
+# Let's see if this actually works
 
 ---
 # Haversine formula
@@ -137,7 +137,7 @@ Json-16         4.262m ± 1%   3.971m ± 3%  -6.83% (p=0.000 n=10)   3.990m ± 1
 ```
 
 ---
-# Rendering Markdown
+# Rendering HTML from Markdown
 
 ```go
 func BenchmarkMarkdownRender(b *testing.B) {
@@ -201,6 +201,25 @@ Some changes that may break matching:
 (from [go documentation](https://go.dev/doc/pgo#source-stability))
 
 ---
+# AutoFDO: Automatic Feedback-Directed Optimization for Warehouse-Scale Applications
+
+It's a [paper](https://storage.googleapis.com/pub-tools-public-publication-data/pdf/45290.pdf) from Google.  It's only 12 pages!
+
+Key points:
+- advocates for AutoFDO flow,
+- stale source usually means about 90% of performance gains from PGO,
+- getting the right profiles is key.
+
+---
+# Getting the right profiles is key
+
+Using PGO compiler will only apply optimisations to paths, which are "hot" in the profile. Things which might not be affected:
+- startup operations,
+- batch jobs, which didn't happen when you were taking taking the profile,
+- traffic spikes using different endpoints,
+- new code.
+
+---
 # What optimisations are enabled by PGO?
 
 Right now PGO supports two optimisations:
@@ -217,3 +236,6 @@ Preferably in git, right where you do `go build`. If you name file `default.pgo`
 - This gives you repeatable builds,
 - You can update `default.pgo` every day/week/month with fresh data,
 - Whenever you update `default.pgo`, you need to rebuild every package.
+
+---
+# Thank you!
