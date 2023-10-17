@@ -64,27 +64,63 @@ pkg: github.com/krzysztofdrys/pgo-talk/benchmarks/distance
 cpu: Intel(R) Xeon(R) CPU @ 2.80GHz
            │ nopgo.tests.times │       pgo.tests.times       │     pgo_v2.tests.times      │
            │      sec/op       │   sec/op     vs base        │   sec/op     vs base        │
-Distance-4         124.9n ± 0%   118.4n ± 0%  -5.20% (n=100)   119.1n ± 0%  -4.64% (n=100)
+Distance-2         125.0n ± 0%   118.4n ± 0%  -5.28% (n=100)   118.3n ± 0%  -5.36% (n=100)
 ```
 
 ---
+# Distance (parallel)
+
+```go
+func BenchmarkDistance(b *testing.B) {
+	b.RunParallel(func(pb *testing.PB) {
+		for pb.Next() {
+			distance()
+		}
+	})
+}
+
+func distance() {
+	var elPaso = geodist.Coord{Lat: 31.7619, Lon: 106.4850}
+	var stLouis = geodist.Coord{Lat: 38.6270, Lon: 90.1994}
+	geodist.HaversineDistance(elPaso, stLouis)
+}
+```
+---
+# Summary
+
+```go
+goos: linux
+goarch: amd64
+pkg: github.com/krzysztofdrys/pgo-talk/benchmarks/distance_paralel
+cpu: Intel(R) Xeon(R) CPU @ 2.80GHz
+           │ nopgo.tests.times │       pgo.tests.times       │     pgo_v2.tests.times      │
+           │      sec/op       │   sec/op     vs base        │   sec/op     vs base        │
+Distance-2         62.65n ± 0%   59.31n ± 0%  -5.33% (n=100)   59.29n ± 0%  -5.36% (n=100)
+```
+
+---
+
 # JSON marshalling
 
 ```go
 func BenchmarkJson(b *testing.B) {
-    b.StopTimer()
-    // Reads 1.1M of json data
-    cs, err := city.Read()
-    if err != nil {
-        panic(err)
+    v := Address{
+    Name:         "Wędrówki",
+    City:         "Wrocław",
+    AddressLines: []string{"Podwale", "37/38,"},
+    PostalCode:   "50-040",
+    Country:      "Poland",
+    Labels: map[string]string{
+        "type":      "pub",
+        "free_beer": "sometimes",
+        },
     }
-    b.StartTimer()
-    
+
     for i := 0; i < b.N; i++ {
-     _, err := json.Marshal(cs)
-	 if err != nil {
-          panic(err)
-      }
+      _, err := json.Marshal(v)
+	  if err != nil {
+       panic(err)
+	  }
     }
 }
 ```
@@ -98,7 +134,7 @@ pkg: github.com/krzysztofdrys/pgo-talk/benchmarks/json
 cpu: Intel(R) Xeon(R) CPU @ 2.80GHz
        │ nopgo.tests.times │       pgo.tests.times        │      pgo_v2.tests.times      │
        │      sec/op       │   sec/op     vs base         │   sec/op     vs base         │
-Json-4         5.454m ± 0%   4.620m ± 0%  -15.28% (n=100)   4.686m ± 1%  -14.07% (n=100)
+Json-2         5.263m ± 0%   4.574m ± 1%  -13.11% (n=100)   4.714m ± 0%  -10.44% (n=100)
 
 ```
 
@@ -127,13 +163,14 @@ func BenchmarkJson(b *testing.B) {
 # Results
 
 ```
-goos: darwin
+goos: linux
 goarch: amd64
 pkg: github.com/krzysztofdrys/pgo-talk/benchmarks/json-iterator
-cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
-        │ nopgo.tests.times │          pgo.tests.times           │         pgo_v2.tests.times         │
-        │      sec/op       │   sec/op     vs base               │   sec/op     vs base               │
-Json-16         4.262m ± 1%   3.971m ± 3%  -6.83% (p=0.000 n=10)   3.990m ± 1%  -6.37% (p=0.000 n=10)
+cpu: Intel(R) Xeon(R) CPU @ 2.80GHz
+       │ nopgo.tests.times │       pgo.tests.times       │     pgo_v2.tests.times      │
+       │      sec/op       │   sec/op     vs base        │   sec/op     vs base        │
+Json-2         5.151m ± 0%   4.739m ± 0%  -8.00% (n=100)   4.695m ± 0%  -8.84% (n=100)
+
 ```
 
 ---
@@ -165,9 +202,9 @@ goos: linux
 goarch: amd64
 pkg: github.com/krzysztofdrys/pgo-talk/benchmarks/markdown
 cpu: Intel(R) Xeon(R) CPU @ 2.80GHz
-                 │ nopgo.tests.times │           pgo.tests.times           │         pgo_v2.tests.times          │
-                 │      sec/op       │   sec/op     vs base                │   sec/op     vs base                │
-MarkdownRender-4         78.01µ ± 0%   76.88µ ± 1%  -1.45% (p=0.000 n=100)   77.09µ ± 0%  -1.18% (p=0.000 n=100)
+                 │ nopgo.tests.times │       pgo.tests.times       │         pgo_v2.tests.times          │
+                 │      sec/op       │   sec/op     vs base        │   sec/op     vs base                │
+MarkdownRender-2         76.27µ ± 0%   74.46µ ± 0%  -2.37% (n=100)   76.05µ ± 0%  -0.29% (p=0.044 n=100)
 ```
 
 Note: [article on go.dev blog](https://go.dev/blog/pgo) reports ~3.8% improvement for web server running this converter 🤷‍. ️ 
